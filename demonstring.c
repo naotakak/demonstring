@@ -2,15 +2,13 @@
 
 int main() {
 
-  char str1[] = "AaBb";
-  char str2[] = "AABB";
-  char str3[] = "aAbB";
-  char str4[] = "aabb";
-
-  printf("strcmp: 'AaBb' compared to 'AABB': %d/n", strcmp( * str1, * str2));
-  printf("strcmp: 'AABB' compared to 'aabb': %d\n", strcmp( * str2, * str4));
-  printf("strncmp: '[a]AbB' compared to '[a]abb': %d\n", strncmp( * str3, * str4, 1));
-  printf("strncmp: '[A]aBb' compared to '[a]AbB': %d\n", strncmp( * str1, * str3, 1));
+  char str1[] = "AabcdefAabc";
+  char str2[] = "Aabc";
+  
+  printf("strchr (value): 'AabcdefAabc', 'A': %d/n", & strchr(* str1, 'A'));
+  printf("strchr (pointer): 'AabcdefAabc', 'A': %d/n", strchr(* str1, 'A'));
+  printf("strstr (value): 'AabcdefAabc', 'Aabc': %d\n", & strstr(* str1, * str2));
+  printf("strstr (pointer): 'AabcdefAabc', 'Aabc': %d\n", strstr(* str1, * str2));
   
   return 0;
 }
